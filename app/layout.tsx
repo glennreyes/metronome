@@ -50,7 +50,7 @@ const RootLayout = ({ children }: RootLayoutProps) => (
             . Source on{' '}
             <a
               className="underline underline-offset-4"
-              href="https://github.com/glennreyes/tuner"
+              href="https://github.com/glennreyes/metronome"
             >
               GitHub
             </a>
@@ -68,7 +68,7 @@ const RootLayout = ({ children }: RootLayoutProps) => (
             </a>
             <a
               className="items-center justify-center rounded-full p-2 text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-              href="https://github.com/glennreyes/tuner"
+              href="https://github.com/glennreyes/metronome"
               rel="noreferrer"
               target="_blank"
             >
