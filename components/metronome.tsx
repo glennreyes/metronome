@@ -18,7 +18,9 @@ export const Metronome: FC = () => {
   const interval = useMemo(() => (60 / bpm) * 1000, [bpm]);
 
   useEffect(() => {
-    setAudioContext(new AudioContext());
+    if (!audioContext) {
+      setAudioContext(new AudioContext());
+    }
 
     return () => {
       void (async () => {
