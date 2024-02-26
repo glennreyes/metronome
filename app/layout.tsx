@@ -10,8 +10,8 @@ import { GeistSans } from 'geist/font/sans';
 import './globals.css';
 
 export const metadata: Metadata = {
-  description: 'A Next.js app template',
-  title: 'Next.js App',
+  description: 'A minimalist metronome',
+  title: 'Metronome',
 };
 
 export const viewport: Viewport = {
