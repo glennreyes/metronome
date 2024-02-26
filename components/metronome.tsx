@@ -14,9 +14,24 @@ export const Metronome: FC = () => {
   const [playing, setPlaying] = useState(false);
   const [highlight, setHighlight] = useState(false);
   const [highlightEnabled, setHighlightEnabled] = useState(true);
+  const [audioContext, setAudioContext] = useState<AudioContext | null>(null);
   const interval = useMemo(() => (60 / bpm) * 1000, [bpm]);
-  const audioContext = useMemo(() => new AudioContext(), []);
+
+  useEffect(() => {
+    setAudioContext(new AudioContext());
+
+    return () => {
+      void (async () => {
+        await audioContext?.close();
+      })();
+    };
+  }, [audioContext]);
+
   const beat = useCallback(() => {
+    if (!audioContext) {
+      return;
+    }
+
     click(audioContext);
 
     setHighlight(true);
